@@ -67,7 +67,7 @@ const resultPariDispari = document.querySelector('#result-pari-dispari');
 // CLICK PARI // CLICK PARI // CLICK PARI // CLICK PARI // CLICK PARI 
 btnPari.addEventListener('click', function() {
     let numeroUser = parseInt(numero.value);
-    if (numeroUser > 5 || numeroUser <= 0 || isNaN) {
+    if (numeroUser > 5 || numeroUser <= 0) {
         resultPariDispari.innerHTML = 'Inserisci un numero compreso tra 1 e 5'
     } else {
         let numeroPc = random(1, 5);
@@ -90,7 +90,7 @@ btnPari.addEventListener('click', function() {
 // CLICK DISPARI // CLICK DISPARI// CLICK DISPARI// CLICK DISPARI
 btnDispari.addEventListener('click', function() {
     let numeroUser = parseInt(numero.value);
-    if (numeroUser > 5 || numeroUser <= 0 || isNaN) {
+    if (numeroUser > 5 || numeroUser <= 0) {
         resultPariDispari.innerHTML = 'Inserisci un numero compreso tra 1 e 5'
     } else {
         let numeroPc = random(1, 5);
