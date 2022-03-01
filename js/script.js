@@ -1,3 +1,61 @@
+/*Palidroma
+Chiedere all’utente di inserire una parola
+Creare una funzione per capire se la parola inserita è palindroma*/
+const btn1Controlla = document.querySelector('#btn-palindroma');
+const btn2Controlla = document.querySelector('#btn2-palindroma');
+const inputParola = document.querySelector('#input');
+const resultPalindroma = document.querySelector('#result-palindroma');
+
+btn1Controlla.addEventListener('click', function() {
+    let palindromo1 = control1Palindromo(inputParola.value)
+    if (palindromo1) {
+        resultPalindroma.innerHTML = 'La parola inserita è un palindromo'
+    } else {
+        resultPalindroma.innerHTML = 'La parola inserita non è un palindromo'
+    }
+});
+
+btn2Controlla.addEventListener('click', function() {
+    let palindromo2 = inputParola.value;
+    let parolaInversa = control2Palindromo(palindromo2);
+
+    if(palindromo2 == parolaInversa){
+        resultPalindroma.innerHTML = 'La parola inserita è un palindromo'
+    } else {
+        resultPalindroma.innerHTML = 'La parola inserita non è un palindromo'
+    }
+});
+
+function control2Palindromo(stringa){
+    let parolaInversa = '';
+    let i = stringa.length - 1;
+
+    while (i >= 0) {
+        parolaInversa += stringa[i];
+        i--;
+    }
+    return parolaInversa;
+};
+
+function control1Palindromo(stringa) {
+    let splitStr = stringa.split('');
+    let reversStr = splitStr.reverse();
+    let joinStr = reversStr.join('');
+    let palindromo
+    if (stringa === joinStr) {
+        palindromo = true
+    } else {
+        palindromo = false
+    }
+    return palindromo
+};
+
+
+
+
+
+
+
 /*Pari e Dispari
 L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
 Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
